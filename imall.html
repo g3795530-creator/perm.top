@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>iMALL — Пермь в Minecraft</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --blue: #4db8ff;
+            --blue-dark: #168ee0;
+            --blue-light: #eaf7ff;
+
+            --text: #101820;
+            --muted: #71808c;
+
+            --bg: #ffffff;
+            --section: #f6fbff;
+
+            --border: #dcecf5;
+
+            --shadow:
+                0 15px 45px rgba(47, 156, 214, .10);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+
+            font-family:
+                "Inter",
+                Arial,
+                sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 72px;
+
+            z-index: 1000;
+
+            background:
+                rgba(255,255,255,.82);
+
+            backdrop-filter:
+                blur(20px);
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+        nav {
+            max-width: 1180px;
+
+            height: 100%;
+
+            margin: auto;
+
+            padding:
+                0 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+
+            font-weight: 800;
+
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--blue);
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+
+            gap: 28px;
+        }
+
+        nav li {
+            color: var(--muted);
+
+            font-size: 13px;
+
+            transition: .2s;
+        }
+
+        nav li:hover {
+            color: var(--blue-dark);
+        }
+
+        .server-button {
+            padding:
+                10px 15px;
+
+            border-radius: 8px;
+
+            background:
+                var(--blue);
+
+            color: white;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            box-shadow:
+                0 7px 20px
+                rgba(77,184,255,.22);
+
+            transition: .2s;
+        }
+
+        .server-button:hover {
+            background:
+                var(--blue-dark);
+
+            transform:
+                translateY(-1px);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 720px;
+
+            padding:
+                150px 25px 100px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 50% 35%,
+                    #e9f8ff 0%,
+                    #ffffff 48%,
+                    #ffffff 100%
+                );
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 600px;
+            height: 600px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(77,184,255,.08);
+
+            filter:
+                blur(70px);
+
+            top: 5%;
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+        }
+
+        .hero-content {
+            position: relative;
+
+            z-index: 2;
+
+            width: 100%;
+
+            max-width: 1000px;
+        }
+
+        .hero-label {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                8px 13px;
+
+            margin-bottom: 28px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                100px;
+
+            background:
+                rgba(255,255,255,.8);
+
+            color:
+                var(--muted);
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            letter-spacing:
+                1.4px;
+
+            text-transform:
+                uppercase;
+        }
+
+        .hero-label::before {
+            content: "";
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background:
+                var(--blue);
+
+            box-shadow:
+                0 0 12px
+                rgba(77,184,255,.8);
+        }
+
+
+        /* =========================
+           IMALL TITLE
+        ========================= */
+
+        .mall-title {
+            font-size:
+                clamp(80px, 16vw, 190px);
+
+            line-height:
+                .82;
+
+            letter-spacing:
+                -11px;
+
+            font-weight:
+                800;
+
+            color:
+                #ffffff;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffffff 0%,
+                    #dff4ff 42%,
+                    #55bdff 100%
+                );
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+            -webkit-text-fill-color:
+                transparent;
+
+            filter:
+                drop-shadow(
+                    0 15px 30px
+                    rgba(77,184,255,.16)
+                );
+
+            user-select:
+                none;
+        }
+
+        .hero-description {
+            max-width:
+                600px;
+
+            margin:
+                35px auto 0;
+
+            color:
+                var(--muted);
+
+            font-size:
+                16px;
+
+            line-height:
+                1.8;
+        }
+
+
+        /* =========================
+           HERO BUTTONS
+        ========================= */
+
+        .hero-buttons {
+            margin-top:
+                32px;
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            gap:
+                10px;
+
+            flex-wrap:
+                wrap;
+        }
+
+        .button {
+            padding:
+                12px 18px;
+
+            border-radius:
+                9px;
+
+            font-size:
+                13px;
+
+            font-weight:
+                700;
+
+            transition:
+                .2s;
+        }
+
+        .primary {
+            background:
+                var(--blue);
+
+            color:
+                white;
+
+            box-shadow:
+                0 10px 30px
+                rgba(77,184,255,.20);
+        }
+
+        .primary:hover {
+            background:
+                var(--blue-dark);
+
+            transform:
+                translateY(-2px);
+        }
+
+        .secondary {
+            background:
+                white;
+
+            border:
+                1px solid var(--border);
+
+            color:
+                var(--text);
+        }
+
+        .secondary:hover {
+            border-color:
+                #b9dff2;
+
+            background:
+                var(--blue-light);
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            max-width:
+                1180px;
+
+            margin:
+                auto;
+
+            padding:
+                100px 25px;
+        }
+
+        .section-label {
+            color:
+                var(--blue-dark);
+
+            font-size:
+                11px;
+
+            font-weight:
+                800;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                1.5px;
+
+            margin-bottom:
+                8px;
+        }
+
+        .section-title {
+            font-size:
+                38px;
+
+            letter-spacing:
+                -1.5px;
+
+            margin-bottom:
+                38px;
+        }
+
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .grid {
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap:
+                14px;
+        }
+
+        .card {
+            min-height:
+                220px;
+
+            padding:
+                30px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                16px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff,
+                    #f7fcff
+                );
+
+            box-shadow:
+                var(--shadow);
+
+            transition:
+                .25s;
+        }
+
+        .card:hover {
+            transform:
+                translateY(-5px);
+
+            border-color:
+                #b9e3f7;
+
+            box-shadow:
+                0 20px 50px
+                rgba(47,156,214,.14);
+        }
+
+        .card-number {
+            color:
+                var(--blue);
+
+            font-size:
+                12px;
+
+            font-weight:
+                700;
+
+            margin-bottom:
+                35px;
+        }
+
+        .card h3 {
+            font-size:
+                19px;
+
+            margin-bottom:
+                8px;
+        }
+
+        .card p {
+            color:
+                var(--muted);
+
+            font-size:
+                13px;
+
+            line-height:
+                1.7;
+        }
+
+
+        /* =========================
+           SHOPS
+        ========================= */
+
+        .shops {
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap:
+                12px;
+        }
+
+        .shop {
+            padding:
+                23px;
+
+            background:
+                #ffffff;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                13px;
+
+            transition:
+                .2s;
+        }
+
+        .shop:hover {
+            transform:
+                translateY(-3px);
+
+            background:
+                var(--blue-light);
+
+            border-color:
+                #b9e3f7;
+        }
+
+        .shop strong {
+            display:
+                block;
+
+            margin-bottom:
+                5px;
+
+            font-size:
+                15px;
+        }
+
+        .shop span {
+            color:
+                var(--muted);
+
+            font-size:
+                12px;
+        }
+
+
+        /* =========================
+           MAP
+        ========================= */
+
+        .map {
+            height:
+                420px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                18px;
+
+            overflow:
+                hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #effaff,
+                    #dff4ff
+                );
+
+            box-shadow:
+                var(--shadow);
+
+            position:
+                relative;
+        }
+
+        .map::before {
+            content:
+                "";
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            opacity:
+                .45;
+
+            background-image:
+                linear-gradient(
+                    rgba(77,184,255,.12) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(77,184,255,.12) 1px,
+                    transparent 1px
+                );
+
+            background-size:
+                35px 35px;
+        }
+
+        .map-content {
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            text-align:
+                center;
+        }
+
+        .map-icon {
+            width:
+                60px;
+
+            height:
+                60px;
+
+            margin:
+                0 auto 18px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border-radius:
+                15px;
+
+            background:
+                white;
+
+            color:
+                var(--blue);
+
+            font-size:
+                25px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(47,156,214,.13);
+        }
+
+        .map-content h3 {
+            font-size:
+                30px;
+
+            margin-bottom:
+                8px;
+        }
+
+        .map-content p {
+            color:
+                var(--muted);
+
+            font-size:
+                13px;
+        }
+
+
+        /* =========================
+           INFO
+        ========================= */
+
+        .info {
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap:
+                14px;
+        }
+
+        .info-card {
+            padding:
+                28px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                15px;
+
+            background:
+                var(--section);
+        }
+
+        .info-card h3 {
+            font-size:
+                17px;
+
+            margin-bottom:
+                9px;
+        }
+
+        .info-card p {
+            color:
+                var(--muted);
+
+            font-size:
+                13px;
+
+            line-height:
+                1.7;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            max-width:
+                1180px;
+
+            margin:
+                auto;
+
+            padding:
+                40px 25px;
+
+            border-top:
+                1px solid var(--border);
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            color:
+                #8a98a2;
+
+            font-size:
+                12px;
+        }
+
+        footer strong {
+            color:
+                var(--text);
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            nav ul {
+                display:
+                    none;
+            }
+
+            .grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .shops {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .info {
+                grid-template-columns:
+                    1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero {
+                min-height:
+                    650px;
+            }
+
+            .mall-title {
+                font-size:
+                    75px;
+
+                letter-spacing:
+                    -5px;
+            }
+
+            section {
+                padding:
+                    70px 20px;
+            }
+
+            .shops {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .section-title {
+                font-size:
+                    30px;
+            }
+
+            footer {
+                flex-direction:
+                    column;
+
+                gap:
+                    10px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            i<span>MALL</span>
+        </a>
+
+        <ul>
+
+            <li>
+                <a href="#about">
+                    О iMALL
+                </a>
+            </li>
+
+            <li>
+                <a href="#shops">
+                    Магазины
+                </a>
+            </li>
+
+            <li>
+                <a href="#map">
+                    План
+                </a>
+            </li>
+
+            <li>
+                <a href="#info">
+                    Информация
+                </a>
+            </li>
+
+        </ul>
+
+        <a href="#map" class="server-button">
+            План ТЦ
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<div class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            Пермь · Minecraft
+        </div>
+
+
+        <div class="mall-title">
+            iMALL
+        </div>
+
+
+        <p class="hero-description">
+
+            Современный торговый центр
+            Перми, воссозданный в Minecraft.
+
+            Магазины, развлечения,
+            городская жизнь и уникальная
+            атмосфера виртуального города.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#shops"
+                class="button primary">
+
+                Магазины
+
+            </a>
+
+
+            <a
+                href="#map"
+                class="button secondary">
+
+                Посмотреть план
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<main>
+
+
+<!-- =========================
+     О IMALL
+========================= -->
+
+<section id="about">
+
+    <div class="section-label">
+        01 / iMALL
+    </div>
+
+    <h2 class="section-title">
+        Всё необходимое в одном месте.
+    </h2>
+
+
+    <div class="grid">
+
+
+        <div class="card">
+
+            <div class="card-number">
+                01
+            </div>
+
+            <h3>
+                Магазины
+            </h3>
+
+            <p>
+                Торговые точки и магазины
+                игроков внутри Minecraft iMALL.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-number">
+                02
+            </div>
+
+            <h3>
+                Развлечения
+            </h3>
+
+            <p>
+                Игровые зоны, кафе,
+                мероприятия и городские события.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-number">
+                03
+            </div>
+
+            <h3>
+                Архитектура
+            </h3>
+
+            <p>
+                Современное здание,
+                построенное блок за блоком
+                в Minecraft.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     МАГАЗИНЫ
+========================= -->
+
+<section id="shops">
+
+    <div class="section-label">
+        02 / Магазины
+    </div>
+
+    <h2 class="section-title">
+        Магазины iMALL.
+    </h2>
+
+
+    <div class="shops">
+
+
+        <div class="shop">
+            <strong>Diamond Store</strong>
+            <span>Редкие предметы</span>
+        </div>
+
+
+        <div class="shop">
+            <strong>Block Fashion</strong>
+            <span>Одежда и стиль</span>
+        </div>
+
+
+        <div class="shop">
+            <strong>Redstone Tech</strong>
+            <span>Техника и механизмы</span>
+        </div>
+
+
+        <div class="shop">
+            <strong>Pixel Home</strong>
+            <span>Дом и интерьер</span>
+        </div>
+
+
+        <div class="shop">
+            <strong>City Market</strong>
+            <span>Продукты</span>
+        </div>
+
+
+        <div class="shop">
+            <strong>Craft Lab</strong>
+            <span>Крафт и ресурсы</span>
+        </div>
+
+
+        <div class="shop">
+            <strong>Perm Style</strong>
+            <span>Городская одежда</span>
+        </div>
+
+
+        <div class="shop">
+            <strong>Minecraft Store</strong>
+            <span>Игровые товары</span>
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MAP
+========================= -->
+
+<section id="map">
+
+    <div class="section-label">
+        03 / План
+    </div>
+
+    <h2 class="section-title">
+        План iMALL.
+    </h2>
+
+
+    <div class="map">
+
+        <div class="map-content">
+
+            <div class="map-icon">
+                ◇
+            </div>
+
+            <h3>
+                iMALL
+            </h3>
+
+            <p>
+                Интерактивный план торгового
+                центра появится здесь.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INFO
+========================= -->
+
+<section id="info">
+
+    <div class="section-label">
+        04 / Информация
+    </div>
+
+    <h2 class="section-title">
+        Посещение iMALL.
+    </h2>
+
+
+    <div class="info">
+
+
+        <div class="info-card">
+
+            <h3>
+                Адрес
+            </h3>
+
+            <p>
+                Пермь, Minecraft-сервер.
+                Точное расположение будет
+                указано на карте города.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                Парковка
+            </h3>
+
+            <p>
+                Парковочные места
+                находятся рядом
+                с торговым центром.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                Время работы
+            </h3>
+
+            <p>
+                iMALL доступен игрокам
+                круглосуточно.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div>
+
+        <strong>iMALL</strong>
+
+        · Пермь в Minecraft
+
+    </div>
+
+
+    <div>
+        Minecraft City Project · 2026
+    </div>
+
+</footer>
+
+
+</body>
+</html>

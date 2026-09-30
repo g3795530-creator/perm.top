@@ -1,0 +1,1834 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Планета — Пермь в Minecraft</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --blue: #48b8f5;
+    --blue-dark: #168bd0;
+    --blue-light: #eefaff;
+
+    --text: #101820;
+    --muted: #73818c;
+
+    --bg: #fff;
+    --soft: #f5fbfe;
+
+    --border: #dcecf4;
+
+    --shadow:
+        0 15px 45px rgba(50,160,210,.10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", Arial, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 72px;
+
+    z-index: 1000;
+
+    background: rgba(255,255,255,.86);
+    backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    max-width: 1200px;
+    height: 100%;
+
+    margin: auto;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+}
+
+.logo span {
+    color: var(--blue);
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+
+    list-style: none;
+}
+
+nav li {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    transition: .2s;
+}
+
+nav li:hover {
+    color: var(--blue-dark);
+}
+
+.nav-button {
+    padding: 10px 15px;
+
+    background: var(--blue);
+    color: white;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 25px rgba(72,184,245,.2);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 720px;
+
+    padding: 150px 25px 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #dff6ff,
+            #ffffff 60%
+        );
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(72,184,245,.09);
+
+    filter: blur(80px);
+
+    top: -100px;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1050px;
+    width: 100%;
+}
+
+.location {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    margin-bottom: 28px;
+
+    border: 1px solid var(--border);
+    border-radius: 50px;
+
+    background: rgba(255,255,255,.8);
+
+    color: var(--muted);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.location::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--blue);
+
+    box-shadow:
+        0 0 12px rgba(72,184,245,.9);
+}
+
+.hero h1 {
+    font-size: clamp(80px, 17vw, 200px);
+
+    line-height: .82;
+
+    letter-spacing: -12px;
+
+    font-weight: 800;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #e6f8ff 45%,
+            #4bb9f4 100%
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    filter:
+        drop-shadow(
+            0 18px 35px
+            rgba(48,168,222,.16)
+        );
+}
+
+.hero h2 {
+    margin-top: 22px;
+
+    font-size: 20px;
+
+    color: #55707f;
+
+    font-weight: 500;
+}
+
+.hero-description {
+    max-width: 600px;
+
+    margin: 25px auto 0;
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    margin-top: 32px;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+.button {
+    padding: 12px 18px;
+
+    border-radius: 9px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: .2s;
+}
+
+.primary {
+    background: var(--blue);
+    color: white;
+}
+
+.primary:hover {
+    background: var(--blue-dark);
+    transform: translateY(-2px);
+}
+
+.secondary {
+    background: white;
+
+    border: 1px solid var(--border);
+}
+
+.secondary:hover {
+    background: var(--blue-light);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 100px 25px;
+}
+
+.section-label {
+    color: var(--blue-dark);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 8px;
+}
+
+.section-title {
+    font-size: 38px;
+
+    letter-spacing: -1.7px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
+.features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+.feature {
+    min-height: 220px;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f5fbfe
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    box-shadow: var(--shadow);
+
+    transition: .25s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+
+    border-color: #b9e0f2;
+}
+
+.feature-number {
+    color: var(--blue);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    margin-bottom: 35px;
+}
+
+.feature h3 {
+    font-size: 19px;
+
+    margin-bottom: 8px;
+}
+
+.feature p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   PROMO
+========================= */
+
+.promo {
+    min-height: 280px;
+
+    padding: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #dff6ff,
+            #f8fdff
+        );
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+}
+
+.promo::after {
+    content: "PLANETA";
+
+    position: absolute;
+
+    right: -60px;
+    bottom: -50px;
+
+    font-size: 130px;
+
+    font-weight: 800;
+
+    color:
+        rgba(72,184,245,.07);
+}
+
+.promo-content {
+    position: relative;
+    z-index: 2;
+}
+
+.promo-label {
+    color: var(--blue-dark);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 10px;
+}
+
+.promo h3 {
+    font-size: 32px;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 10px;
+}
+
+.promo p {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    max-width: 500px;
+
+    line-height: 1.7;
+}
+
+.promo-button {
+    position: relative;
+    z-index: 2;
+
+    flex-shrink: 0;
+
+    padding: 13px 20px;
+
+    border-radius: 9px;
+
+    background: var(--blue);
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   SHOPS
+========================= */
+
+.shop-filter {
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 20px;
+}
+
+.filter {
+    padding: 9px 13px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.filter.active {
+    background: var(--blue);
+
+    color: white;
+
+    border-color: var(--blue);
+}
+
+.shops {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+.shop {
+    padding: 23px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+
+    transition: .2s;
+}
+
+.shop:hover {
+    transform: translateY(-3px);
+
+    background: var(--blue-light);
+
+    border-color: #b7dff0;
+}
+
+.shop strong {
+    display: block;
+
+    font-size: 15px;
+
+    margin-bottom: 5px;
+}
+
+.shop span {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   FOOD
+========================= */
+
+.food-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+.food {
+    padding: 25px;
+
+    min-height: 150px;
+
+    border-radius: 14px;
+
+    background: #f8fcfe;
+
+    border: 1px solid var(--border);
+}
+
+.food-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: var(--blue);
+
+    box-shadow: 0 5px 20px rgba(40,150,200,.08);
+}
+
+.food h3 {
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+.food p {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   ENTERTAINMENT
+========================= */
+
+.entertainment {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+.ent {
+    min-height: 230px;
+
+    padding: 28px;
+
+    border-radius: 16px;
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    overflow: hidden;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #69c8f5,
+            #237eb2
+        );
+}
+
+.ent:nth-child(2) {
+    background:
+        linear-gradient(
+            145deg,
+            #a5e6ff,
+            #4da8d1
+        );
+}
+
+.ent:nth-child(3) {
+    background:
+        linear-gradient(
+            145deg,
+            #73d5bd,
+            #268c7a
+        );
+}
+
+.ent h3 {
+    font-size: 20px;
+
+    margin-bottom: 6px;
+}
+
+.ent p {
+    color: rgba(255,255,255,.85);
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   MAP
+========================= */
+
+.map {
+    height: 440px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    border: 1px solid var(--border);
+
+    background:
+        linear-gradient(
+            135deg,
+            #e7f8ff,
+            #d7f0fb
+        );
+
+    box-shadow: var(--shadow);
+}
+
+.map::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .5;
+
+    background-image:
+        linear-gradient(
+            rgba(60,170,220,.12) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(60,170,220,.12) 1px,
+            transparent 1px
+        );
+
+    background-size: 35px 35px;
+}
+
+.map-building {
+    width: 70%;
+
+    height: 65%;
+
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    grid-template-rows:
+        repeat(2, 1fr);
+
+    gap: 8px;
+
+    padding: 10px;
+
+    background: rgba(255,255,255,.7);
+
+    border: 2px solid rgba(72,184,245,.3);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 20px 50px rgba(30,130,180,.1);
+}
+
+.map-room {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    border-radius: 7px;
+
+    background: rgba(255,255,255,.85);
+
+    border: 1px solid #c9e7f3;
+
+    color: #5c7c8c;
+
+    font-size: 10px;
+
+    padding: 5px;
+}
+
+.map-room.main {
+    grid-column: span 2;
+
+    background:
+        #dff5ff;
+
+    color:
+        var(--blue-dark);
+
+    font-weight: 700;
+}
+
+.map-title {
+    position: absolute;
+
+    z-index: 3;
+
+    padding: 10px 18px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    color: var(--blue-dark);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    box-shadow: 0 8px 25px rgba(30,130,180,.1);
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+.service {
+    padding: 22px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: var(--soft);
+}
+
+.service strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 14px;
+}
+
+.service span {
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   NEWS
+========================= */
+
+.news {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+.news-card {
+    padding: 25px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    background: white;
+
+    transition: .2s;
+}
+
+.news-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow);
+}
+
+.news-type {
+    color: var(--blue-dark);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 20px;
+}
+
+.news-card h3 {
+    font-size: 16px;
+
+    margin-bottom: 8px;
+}
+
+.news-card p {
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   INFO
+========================= */
+
+.info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+.info-card {
+    padding: 28px;
+
+    background: var(--soft);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+}
+
+.info-card h3 {
+    font-size: 17px;
+
+    margin-bottom: 9px;
+}
+
+.info-card p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 40px 25px;
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #8997a0;
+
+    font-size: 12px;
+}
+
+footer strong {
+    color: var(--text);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    nav ul {
+        display: none;
+    }
+
+    .features,
+    .entertainment,
+    .news {
+        grid-template-columns: 1fr;
+    }
+
+    .shops,
+    .food-grid,
+    .services {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .promo {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .map-building {
+        width: 90%;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero h1 {
+        font-size: 80px;
+
+        letter-spacing: -6px;
+    }
+
+    section {
+        padding: 70px 20px;
+    }
+
+    .shops,
+    .food-grid,
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .promo {
+        padding: 30px;
+    }
+
+    .map {
+        height: 350px;
+    }
+
+    .map-building {
+        width: 94%;
+        height: 55%;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+<nav>
+
+    <a href="index.html" class="logo">
+        <span>П</span>ланета
+    </a>
+
+    <ul>
+        <li><a href="#shops">Магазины</a></li>
+        <li><a href="#food">Еда</a></li>
+        <li><a href="#fun">Развлечения</a></li>
+        <li><a href="#services">Сервисы</a></li>
+        <li><a href="#map">Карта</a></li>
+    </ul>
+
+    <a href="#map" class="nav-button">
+        План ТРЦ
+    </a>
+
+</nav>
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<div class="hero">
+
+<div class="hero-content">
+
+    <div class="location">
+        Пермь · Minecraft
+    </div>
+
+    <h1>
+        ПЛАНЕТА
+    </h1>
+
+    <h2>
+        Торгово-развлекательный центр
+    </h2>
+
+    <p class="hero-description">
+        Виртуальная версия ТРЦ «Планета»,
+        созданная в Minecraft.
+        Магазины, еда, развлечения,
+        сервисы и городская жизнь
+        в одном месте.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="#shops" class="button primary">
+            Магазины
+        </a>
+
+        <a href="#map" class="button secondary">
+            Открыть карту
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<main>
+
+
+<!-- =========================
+     ОСНОВНОЕ
+========================= -->
+
+<section>
+
+<div class="section-label">
+    01 / Планета
+</div>
+
+<h2 class="section-title">
+    Всё для города в одном месте.
+</h2>
+
+<div class="features">
+
+    <div class="feature">
+        <div class="feature-number">01</div>
+
+        <h3>Магазины</h3>
+
+        <p>
+            Большая торговая зона
+            с магазинами игроков
+            и городскими брендами.
+        </p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-number">02</div>
+
+        <h3>Развлечения</h3>
+
+        <p>
+            Кинотеатр, игровые зоны,
+            аттракционы и другие
+            места для отдыха.
+        </p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-number">03</div>
+
+        <h3>Сервисы</h3>
+
+        <p>
+            Банки, ремонт, услуги,
+            парковка и другие
+            городские сервисы.
+        </p>
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     АКЦИЯ
+========================= -->
+
+<section>
+
+<div class="promo">
+
+    <div class="promo-content">
+
+        <div class="promo-label">
+            Minecraft event
+        </div>
+
+        <h3>
+            Купи и выиграй
+        </h3>
+
+        <p>
+            Специальное событие на сервере.
+            Совершай покупки в магазинах
+            Планеты и участвуй в розыгрыше
+            игровых призов.
+        </p>
+
+    </div>
+
+    <a href="#news" class="promo-button">
+        Подробнее
+    </a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     МАГАЗИНЫ
+========================= -->
+
+<section id="shops">
+
+<div class="section-label">
+    02 / Магазины
+</div>
+
+<h2 class="section-title">
+    Магазины Планеты.
+</h2>
+
+<div class="shop-filter">
+
+    <button class="filter active"
+        onclick="filterShops('all', this)">
+        Все
+    </button>
+
+    <button class="filter"
+        onclick="filterShops('fashion', this)">
+        Одежда
+    </button>
+
+    <button class="filter"
+        onclick="filterShops('tech', this)">
+        Техника
+    </button>
+
+    <button class="filter"
+        onclick="filterShops('home', this)">
+        Дом
+    </button>
+
+    <button class="filter"
+        onclick="filterShops('food', this)">
+        Продукты
+    </button>
+
+</div>
+
+
+<div class="shops">
+
+
+    <div class="shop" data-category="fashion">
+        <strong>Block Fashion</strong>
+        <span>Одежда</span>
+    </div>
+
+
+    <div class="shop" data-category="fashion">
+        <strong>Perm Style</strong>
+        <span>Одежда и аксессуары</span>
+    </div>
+
+
+    <div class="shop" data-category="tech">
+        <strong>Redstone</strong>
+        <span>Техника</span>
+    </div>
+
+
+    <div class="shop" data-category="tech">
+        <strong>Diamond Tech</strong>
+        <span>Электроника</span>
+    </div>
+
+
+    <div class="shop" data-category="home">
+        <strong>Pixel Home</strong>
+        <span>Товары для дома</span>
+    </div>
+
+
+    <div class="shop" data-category="home">
+        <strong>Craft Home</strong>
+        <span>Интерьер</span>
+    </div>
+
+
+    <div class="shop" data-category="food">
+        <strong>Green Market</strong>
+        <span>Продукты</span>
+    </div>
+
+
+    <div class="shop" data-category="food">
+        <strong>City Market</strong>
+        <span>Еда</span>
+    </div>
+
+
+    <div class="shop" data-category="fashion">
+        <strong>Pixel Kids</strong>
+        <span>Детские товары</span>
+    </div>
+
+
+    <div class="shop" data-category="tech">
+        <strong>MineStore</strong>
+        <span>Игровые товары</span>
+    </div>
+
+
+    <div class="shop" data-category="home">
+        <strong>Block Decor</strong>
+        <span>Декор</span>
+    </div>
+
+
+    <div class="shop" data-category="food">
+        <strong>Food Planet</strong>
+        <span>Продукты питания</span>
+    </div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ЕДА
+========================= -->
+
+<section id="food">
+
+<div class="section-label">
+    03 / Еда
+</div>
+
+<h2 class="section-title">
+    Поесть и отдохнуть.
+</h2>
+
+
+<div class="food-grid">
+
+    <div class="food">
+        <div class="food-icon">☕</div>
+        <h3>Кофейни</h3>
+        <p>Кофе и десерты</p>
+    </div>
+
+    <div class="food">
+        <div class="food-icon">🍔</div>
+        <h3>Фастфуд</h3>
+        <p>Быстрый перекус</p>
+    </div>
+
+    <div class="food">
+        <div class="food-icon">🍕</div>
+        <h3>Рестораны</h3>
+        <p>Полноценный обед</p>
+    </div>
+
+    <div class="food">
+        <div class="food-icon">🍦</div>
+        <h3>Мороженое</h3>
+        <p>Сладости и десерты</p>
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     РАЗВЛЕЧЕНИЯ
+========================= -->
+
+<section id="fun">
+
+<div class="section-label">
+    04 / Развлечения
+</div>
+
+<h2 class="section-title">
+    После покупок — развлечения.
+</h2>
+
+
+<div class="entertainment">
+
+    <div class="ent">
+
+        <h3>
+            Планета Кино
+        </h3>
+
+        <p>
+            Minecraft-кинотеатр
+        </p>
+
+    </div>
+
+
+    <div class="ent">
+
+        <h3>
+            Superland
+        </h3>
+
+        <p>
+            Игровой парк
+        </p>
+
+    </div>
+
+
+    <div class="ent">
+
+        <h3>
+            Crazy Kart
+        </h3>
+
+        <p>
+            Картинг
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     КАРТА
+========================= -->
+
+<section id="map">
+
+<div class="section-label">
+    05 / Карта ТРЦ
+</div>
+
+<h2 class="section-title">
+    Найди нужное место.
+</h2>
+
+
+<div class="map">
+
+    <div class="map-building">
+
+        <div class="map-room main">
+            Центральный вход
+        </div>
+
+        <div class="map-room">
+            Магазин
+        </div>
+
+        <div class="map-room">
+            Магазин
+        </div>
+
+        <div class="map-room">
+            Еда
+        </div>
+
+        <div class="map-room">
+            Кино
+        </div>
+
+        <div class="map-room">
+            Развлечения
+        </div>
+
+        <div class="map-room">
+            Сервисы
+        </div>
+
+    </div>
+
+    <div class="map-title">
+        ПЛАНЕТА · Minecraft
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     СЕРВИСЫ
+========================= -->
+
+<section id="services">
+
+<div class="section-label">
+    06 / Сервисы
+</div>
+
+<h2 class="section-title">
+    Полезные сервисы.
+</h2>
+
+
+<div class="services">
+
+    <div class="service">
+        <strong>Парковка</strong>
+        <span>Парковочные места</span>
+    </div>
+
+    <div class="service">
+        <strong>Банкомат</strong>
+        <span>Финансовые услуги</span>
+    </div>
+
+    <div class="service">
+        <strong>Ремонт</strong>
+        <span>Ремонт техники</span>
+    </div>
+
+    <div class="service">
+        <strong>Ателье</strong>
+        <span>Ремонт одежды</span>
+    </div>
+
+    <div class="service">
+        <strong>Постамат</strong>
+        <span>Получение заказов</span>
+    </div>
+
+    <div class="service">
+        <strong>Парикмахерская</strong>
+        <span>Уход и стиль</span>
+    </div>
+
+    <div class="service">
+        <strong>Фотоуслуги</strong>
+        <span>Фото и печать</span>
+    </div>
+
+    <div class="service">
+        <strong>Информация</strong>
+        <span>Помощь посетителям</span>
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     НОВОСТИ
+========================= -->
+
+<section id="news">
+
+<div class="section-label">
+    07 / Новости
+</div>
+
+<h2 class="section-title">
+    Новости Планеты.
+</h2>
+
+
+<div class="news">
+
+    <div class="news-card">
+
+        <div class="news-type">
+            Новости
+        </div>
+
+        <h3>
+            Открытие нового магазина
+        </h3>
+
+        <p>
+            В Планете появился
+            новый магазин Minecraft.
+        </p>
+
+    </div>
+
+
+    <div class="news-card">
+
+        <div class="news-type">
+            Событие
+        </div>
+
+        <h3>
+            Большое открытие
+        </h3>
+
+        <p>
+            Торжественное открытие
+            обновлённого ТРЦ.
+        </p>
+
+    </div>
+
+
+    <div class="news-card">
+
+        <div class="news-type">
+            Акция
+        </div>
+
+        <h3>
+            Неделя скидок
+        </h3>
+
+        <p>
+            Специальные предложения
+            магазинов Планеты.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ИНФОРМАЦИЯ
+========================= -->
+
+<section>
+
+<div class="section-label">
+    08 / Информация
+</div>
+
+<h2 class="section-title">
+    Планета в Minecraft.
+</h2>
+
+
+<div class="info">
+
+    <div class="info-card">
+
+        <h3>
+            Адрес
+        </h3>
+
+        <p>
+            Пермь, Minecraft-город.
+            Точное расположение ТРЦ
+            будет добавлено на карту.
+        </p>
+
+    </div>
+
+
+    <div class="info-card">
+
+        <h3>
+            Режим работы
+        </h3>
+
+        <p>
+            ТРЦ доступен игрокам
+            круглосуточно.
+        </p>
+
+    </div>
+
+
+    <div class="info-card">
+
+        <h3>
+            Парковка
+        </h3>
+
+        <p>
+            Большая парковка
+            расположена рядом
+            со зданием.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div>
+        <strong>Планета</strong>
+        · Пермь в Minecraft
+    </div>
+
+    <div>
+        Minecraft City Project · 2026
+    </div>
+
+</footer>
+
+
+<script>
+
+function filterShops(category, button) {
+
+    document
+        .querySelectorAll(".filter")
+        .forEach(function(item) {
+            item.classList.remove("active");
+        });
+
+    button.classList.add("active");
+
+
+    document
+        .querySelectorAll(".shop")
+        .forEach(function(shop) {
+
+            if (
+                category === "all" ||
+                shop.dataset.category === category
+            ) {
+
+                shop.style.display = "block";
+
+            } else {
+
+                shop.style.display = "none";
+
+            }
+
+        });
+
+}
+
+</script>
+
+</body>
+</html>

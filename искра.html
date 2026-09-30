@@ -1,0 +1,2015 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Искра — Пермь в Minecraft</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --red: #ff2638;
+    --red-dark: #d91627;
+    --red-light: #ff5360;
+
+    --black: #080808;
+    --dark: #101010;
+    --card: #151515;
+
+    --white: #ffffff;
+    --gray: #9a9a9a;
+
+    --border: rgba(255,255,255,.10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 72px;
+
+    z-index: 1000;
+
+    background:
+        rgba(8,8,8,.82);
+
+    backdrop-filter:
+        blur(18px);
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+nav {
+    max-width: 1200px;
+
+    height: 100%;
+
+    margin: auto;
+
+    padding:
+        0 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+
+    font-weight: 900;
+
+    letter-spacing: -1.5px;
+}
+
+.logo span {
+    color: var(--red);
+}
+
+nav ul {
+    display: flex;
+
+    gap: 27px;
+
+    list-style: none;
+}
+
+nav li {
+    color: #aaa;
+
+    font-size: 12px;
+
+    transition: .2s;
+}
+
+nav li:hover {
+    color: white;
+}
+
+.header-button {
+    padding:
+        10px 16px;
+
+    border-radius:
+        7px;
+
+    background:
+        var(--red);
+
+    color:
+        white;
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    transition:
+        .2s;
+}
+
+.header-button:hover {
+    background:
+        var(--red-dark);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height:
+        760px;
+
+    padding:
+        150px 25px 100px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            #321015,
+            #080808 55%
+        );
+}
+
+.hero::before {
+    content: "";
+
+    position:
+        absolute;
+
+    width:
+        650px;
+
+    height:
+        650px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255,38,56,.12);
+
+    filter:
+        blur(100px);
+
+    top:
+        -100px;
+
+    left:
+        50%;
+
+    transform:
+        translateX(-50%);
+}
+
+.hero::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    opacity:
+        .06;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.3) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.3) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        50px 50px;
+}
+
+.hero-content {
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        100%;
+
+    max-width:
+        1050px;
+}
+
+.hero-label {
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    padding:
+        8px 14px;
+
+    margin-bottom:
+        30px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    border-radius:
+        50px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    color:
+        #aaa;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1.5px;
+
+    text-transform:
+        uppercase;
+}
+
+.hero-label::before {
+    content:
+        "";
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--red);
+
+    box-shadow:
+        0 0 15px
+        rgba(255,38,56,.9);
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.hero h1 {
+    font-size:
+        clamp(85px, 17vw, 210px);
+
+    line-height:
+        .78;
+
+    letter-spacing:
+        -13px;
+
+    font-weight:
+        900;
+
+    color:
+        white;
+
+    text-shadow:
+        0 15px 60px
+        rgba(255,38,56,.16);
+}
+
+.hero h1 span {
+    color:
+        var(--red);
+}
+
+.hero-subtitle {
+    margin-top:
+        25px;
+
+    color:
+        #b5b5b5;
+
+    font-size:
+        18px;
+
+    font-weight:
+        500;
+}
+
+.hero-description {
+    max-width:
+        600px;
+
+    margin:
+        23px auto 0;
+
+    color:
+        #858585;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.8;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons {
+    margin-top:
+        32px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        10px;
+
+    flex-wrap:
+        wrap;
+}
+
+.button {
+    padding:
+        13px 19px;
+
+    border-radius:
+        8px;
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    transition:
+        .2s;
+}
+
+.primary {
+    background:
+        var(--red);
+
+    color:
+        white;
+
+    box-shadow:
+        0 10px 35px
+        rgba(255,38,56,.20);
+}
+
+.primary:hover {
+    background:
+        var(--red-dark);
+
+    transform:
+        translateY(-2px);
+}
+
+.secondary {
+    border:
+        1px solid
+        var(--border);
+
+    background:
+        rgba(255,255,255,.04);
+
+    color:
+        #ddd;
+}
+
+.secondary:hover {
+    background:
+        rgba(255,255,255,.08);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    max-width:
+        1200px;
+
+    margin:
+        auto;
+
+    padding:
+        100px 25px;
+}
+
+.section-label {
+    color:
+        var(--red);
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        2px;
+
+    margin-bottom:
+        9px;
+}
+
+.section-title {
+    font-size:
+        40px;
+
+    letter-spacing:
+        -1.8px;
+
+    margin-bottom:
+        38px;
+}
+
+
+/* =========================
+   MAIN CARDS
+========================= */
+
+.cards {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        14px;
+}
+
+.card {
+    min-height:
+        230px;
+
+    padding:
+        30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #171717,
+            #101010
+        );
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        15px;
+
+    transition:
+        .25s;
+}
+
+.card:hover {
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(255,38,56,.45);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.35);
+}
+
+.card-number {
+    color:
+        var(--red);
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+    margin-bottom:
+        38px;
+}
+
+.card h3 {
+    font-size:
+        20px;
+
+    margin-bottom:
+        8px;
+}
+
+.card p {
+    color:
+        var(--gray);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+}
+
+
+/* =========================
+   RED BANNER
+========================= */
+
+.banner {
+    min-height:
+        300px;
+
+    padding:
+        45px;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        30px;
+
+    border-radius:
+        18px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #ff2638,
+            #a70e1d
+        );
+}
+
+.banner::after {
+    content:
+        "ИСКРА";
+
+    position:
+        absolute;
+
+    right:
+        -40px;
+
+    bottom:
+        -70px;
+
+    font-size:
+        150px;
+
+    font-weight:
+        900;
+
+    color:
+        rgba(255,255,255,.08);
+}
+
+.banner-content {
+    position:
+        relative;
+
+    z-index:
+        2;
+}
+
+.banner h2 {
+    font-size:
+        38px;
+
+    letter-spacing:
+        -1.5px;
+
+    margin-bottom:
+        10px;
+}
+
+.banner p {
+    max-width:
+        500px;
+
+    color:
+        rgba(255,255,255,.82);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+}
+
+.banner-button {
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    flex-shrink:
+        0;
+
+    padding:
+        13px 19px;
+
+    border-radius:
+        8px;
+
+    background:
+        white;
+
+    color:
+        #111;
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+}
+
+
+/* =========================
+   SHOPS
+========================= */
+
+.shops {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        12px;
+}
+
+.shop {
+    padding:
+        23px;
+
+    background:
+        #121212;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        12px;
+
+    transition:
+        .2s;
+}
+
+.shop:hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(255,38,56,.4);
+
+    background:
+        #181818;
+}
+
+.shop strong {
+    display:
+        block;
+
+    font-size:
+        15px;
+
+    margin-bottom:
+        6px;
+}
+
+.shop span {
+    color:
+        #777;
+
+    font-size:
+        11px;
+}
+
+
+/* =========================
+   FOOD
+========================= */
+
+.food {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        12px;
+}
+
+.food-card {
+    min-height:
+        170px;
+
+    padding:
+        25px;
+
+    background:
+        #131313;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        13px;
+
+    transition:
+        .2s;
+}
+
+.food-card:hover {
+    border-color:
+        rgba(255,38,56,.4);
+
+    transform:
+        translateY(-3px);
+}
+
+.food-icon {
+    width:
+        40px;
+
+    height:
+        40px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-bottom:
+        25px;
+
+    border-radius:
+        9px;
+
+    background:
+        #211013;
+
+    color:
+        var(--red);
+
+    font-size:
+        18px;
+}
+
+.food-card h3 {
+    font-size:
+        16px;
+
+    margin-bottom:
+        5px;
+}
+
+.food-card p {
+    color:
+        #777;
+
+    font-size:
+        11px;
+}
+
+
+/* =========================
+   LIFESTYLE
+========================= */
+
+.lifestyle {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        12px;
+}
+
+.life {
+    padding:
+        23px;
+
+    background:
+        #121212;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        12px;
+}
+
+.life strong {
+    display:
+        block;
+
+    margin-bottom:
+        6px;
+
+    font-size:
+        14px;
+}
+
+.life span {
+    color:
+        #777;
+
+    font-size:
+        11px;
+}
+
+
+/* =========================
+   FLOOR MAP
+========================= */
+
+.map {
+    height:
+        440px;
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        18px;
+
+    background:
+        #0e0e0e;
+}
+
+.map::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    opacity:
+        .5;
+
+    background-image:
+        linear-gradient(
+            rgba(255,38,56,.10) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,38,56,.10) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        35px 35px;
+}
+
+.map-building {
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        70%;
+
+    height:
+        65%;
+
+    padding:
+        10px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    grid-template-rows:
+        repeat(2, 1fr);
+
+    gap:
+        8px;
+
+    background:
+        #181818;
+
+    border:
+        1px solid
+        rgba(255,38,56,.35);
+
+    border-radius:
+        12px;
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.5);
+}
+
+.room {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    padding:
+        5px;
+
+    border-radius:
+        6px;
+
+    background:
+        #222;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    color:
+        #888;
+
+    font-size:
+        10px;
+}
+
+.room.main {
+    grid-column:
+        span 2;
+
+    background:
+        #3a1116;
+
+    border-color:
+        rgba(255,38,56,.4);
+
+    color:
+        #ff5360;
+
+    font-weight:
+        800;
+}
+
+.map-title {
+    position:
+        absolute;
+
+    z-index:
+        4;
+
+    top:
+        25px;
+
+    left:
+        50%;
+
+    transform:
+        translateX(-50%);
+
+    padding:
+        10px 16px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    border-radius:
+        8px;
+
+    background:
+        #151515;
+
+    color:
+        var(--red);
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+}
+
+
+/* =========================
+   NEWS
+========================= */
+
+.news {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        14px;
+}
+
+.news-card {
+    padding:
+        26px;
+
+    background:
+        #121212;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        13px;
+}
+
+.news-type {
+    color:
+        var(--red);
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        1.5px;
+
+    margin-bottom:
+        20px;
+}
+
+.news-card h3 {
+    font-size:
+        17px;
+
+    margin-bottom:
+        8px;
+}
+
+.news-card p {
+    color:
+        #777;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.6;
+}
+
+
+/* =========================
+   CONTACTS
+========================= */
+
+.contacts {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        12px;
+}
+
+.contact {
+    padding:
+        25px;
+
+    background:
+        #121212;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        13px;
+}
+
+.contact h3 {
+    font-size:
+        16px;
+
+    margin-bottom:
+        8px;
+}
+
+.contact p {
+    color:
+        #777;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.7;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    max-width:
+        1200px;
+
+    margin:
+        auto;
+
+    padding:
+        40px 25px;
+
+    border-top:
+        1px solid
+        var(--border);
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    color:
+        #666;
+
+    font-size:
+        11px;
+}
+
+footer strong {
+    color:
+        white;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    nav ul {
+        display:
+            none;
+    }
+
+    .cards,
+    .news {
+        grid-template-columns:
+            1fr;
+    }
+
+    .shops,
+    .food,
+    .lifestyle {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .banner {
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+    }
+
+    .map-building {
+        width:
+            90%;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .hero {
+        min-height:
+            650px;
+    }
+
+    .hero h1 {
+        font-size:
+            85px;
+
+        letter-spacing:
+            -7px;
+    }
+
+    section {
+        padding:
+            70px 20px;
+    }
+
+    .shops,
+    .food,
+    .lifestyle,
+    .contacts {
+        grid-template-columns:
+            1fr;
+    }
+
+    .section-title {
+        font-size:
+            30px;
+    }
+
+    .banner {
+        padding:
+            30px;
+    }
+
+    .map {
+        height:
+            350px;
+    }
+
+    .map-building {
+        width:
+            94%;
+
+        height:
+            55%;
+    }
+
+    footer {
+        flex-direction:
+            column;
+
+        gap:
+            10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<nav>
+
+    <a href="index.html" class="logo">
+        <span>И</span>СКРА
+    </a>
+
+    <ul>
+        <li><a href="#shops">Магазины</a></li>
+        <li><a href="#food">Где поесть</a></li>
+        <li><a href="#lifestyle">Lifestyle</a></li>
+        <li><a href="#map">Планировка</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+    </ul>
+
+    <a href="#map" class="header-button">
+        План ТЦ
+    </a>
+
+</nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<div class="hero">
+
+<div class="hero-content">
+
+    <div class="hero-label">
+        Пермь · Minecraft
+    </div>
+
+    <h1>
+        <span>И</span>СКРА
+    </h1>
+
+    <div class="hero-subtitle">
+        Торговый центр в центре Minecraft-Перми
+    </div>
+
+    <p class="hero-description">
+        Виртуальная версия ТЦ «Искра».
+        Магазины, кафе, развлечения,
+        сервисы и городская жизнь
+        внутри Minecraft.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="#shops" class="button primary">
+            Магазины
+        </a>
+
+        <a href="#map" class="button secondary">
+            Планировка
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<main>
+
+
+<!-- =========================
+     О ТЦ
+========================= -->
+
+<section>
+
+<div class="section-label">
+    01 / ТЦ Искра
+</div>
+
+<h2 class="section-title">
+    Шопинг. Еда. Отдых.
+</h2>
+
+
+<div class="cards">
+
+    <div class="card">
+
+        <div class="card-number">
+            01
+        </div>
+
+        <h3>
+            Магазины
+        </h3>
+
+        <p>
+            Торговая зона с магазинами
+            игроков и городскими
+            брендами Minecraft.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-number">
+            02
+        </div>
+
+        <h3>
+            Где поесть
+        </h3>
+
+        <p>
+            Кафе, рестораны,
+            фуд-корт и места
+            для отдыха.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-number">
+            03
+        </div>
+
+        <h3>
+            Lifestyle
+        </h3>
+
+        <p>
+            Услуги, развлечения,
+            красота, здоровье
+            и городские сервисы.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     RED BANNER
+========================= -->
+
+<section>
+
+<div class="banner">
+
+    <div class="banner-content">
+
+        <h2>
+            ИСКРА ЗАЖИГАЕТСЯ.
+        </h2>
+
+        <p>
+            Особое Minecraft-событие
+            в торговом центре.
+            Посещай магазины,
+            участвуй в мероприятиях
+            и получай игровые награды.
+        </p>
+
+    </div>
+
+    <a href="#news" class="banner-button">
+        Подробнее
+    </a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     МАГАЗИНЫ
+========================= -->
+
+<section id="shops">
+
+<div class="section-label">
+    02 / Магазины
+</div>
+
+<h2 class="section-title">
+    Магазины Искры.
+</h2>
+
+
+<div class="shops">
+
+    <div class="shop">
+        <strong>МОБИ</strong>
+        <span>Связь и техника</span>
+    </div>
+
+    <div class="shop">
+        <strong>Соколов</strong>
+        <span>Украшения</span>
+    </div>
+
+    <div class="shop">
+        <strong>Redstone Tech</strong>
+        <span>Электроника</span>
+    </div>
+
+    <div class="shop">
+        <strong>Block Fashion</strong>
+        <span>Одежда</span>
+    </div>
+
+    <div class="shop">
+        <strong>Pixel Home</strong>
+        <span>Для дома</span>
+    </div>
+
+    <div class="shop">
+        <strong>Мир Хвостатых</strong>
+        <span>Зоотовары</span>
+    </div>
+
+    <div class="shop">
+        <strong>Дикая Кошка</strong>
+        <span>Одежда и мех</span>
+    </div>
+
+    <div class="shop">
+        <strong>Craft Store</strong>
+        <span>Товары Minecraft</span>
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ЕДА
+========================= -->
+
+<section id="food">
+
+<div class="section-label">
+    03 / Где поесть
+</div>
+
+<h2 class="section-title">
+    Поесть в Искре.
+</h2>
+
+
+<div class="food">
+
+    <div class="food-card">
+
+        <div class="food-icon">
+            P
+        </div>
+
+        <h3>
+            Pizza
+        </h3>
+
+        <p>
+            Ресторан быстрого обслуживания
+        </p>
+
+    </div>
+
+
+    <div class="food-card">
+
+        <div class="food-icon">
+            C
+        </div>
+
+        <h3>
+            Chicken
+        </h3>
+
+        <p>
+            Быстрый перекус
+        </p>
+
+    </div>
+
+
+    <div class="food-card">
+
+        <div class="food-icon">
+            K
+        </div>
+
+        <h3>
+            Кофейня
+        </h3>
+
+        <p>
+            Кофе и десерты
+        </p>
+
+    </div>
+
+
+    <div class="food-card">
+
+        <div class="food-icon">
+            F
+        </div>
+
+        <h3>
+            Фуд-корт
+        </h3>
+
+        <p>
+            Еда на любой вкус
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     LIFESTYLE
+========================= -->
+
+<section id="lifestyle">
+
+<div class="section-label">
+    04 / Lifestyle
+</div>
+
+<h2 class="section-title">
+    Всё для повседневной жизни.
+</h2>
+
+
+<div class="lifestyle">
+
+    <div class="life">
+        <strong>Сбербанк</strong>
+        <span>Банкомат</span>
+    </div>
+
+    <div class="life">
+        <strong>Yamaguchi</strong>
+        <span>Здоровье</span>
+    </div>
+
+    <div class="life">
+        <strong>Пупсландия</strong>
+        <span>Развлечения</span>
+    </div>
+
+    <div class="life">
+        <strong>Play Day</strong>
+        <span>Развлечения</span>
+    </div>
+
+    <div class="life">
+        <strong>Аптека</strong>
+        <span>Здоровье</span>
+    </div>
+
+    <div class="life">
+        <strong>Салон красоты</strong>
+        <span>Красота</span>
+    </div>
+
+    <div class="life">
+        <strong>Пункт выдачи</strong>
+        <span>Услуги</span>
+    </div>
+
+    <div class="life">
+        <strong>Детская зона</strong>
+        <span>Отдых</span>
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ПЛАНИРОВКА
+========================= -->
+
+<section id="map">
+
+<div class="section-label">
+    05 / Планировка
+</div>
+
+<h2 class="section-title">
+    План ТЦ «Искра».
+</h2>
+
+
+<div class="map">
+
+    <div class="map-title">
+        ИСКРА · MINECRAFT
+    </div>
+
+
+    <div class="map-building">
+
+        <div class="room main">
+            Главный вход
+        </div>
+
+        <div class="room">
+            Магазин
+        </div>
+
+        <div class="room">
+            Магазин
+        </div>
+
+        <div class="room">
+            Еда
+        </div>
+
+        <div class="room">
+            Развлечения
+        </div>
+
+        <div class="room">
+            Сервисы
+        </div>
+
+        <div class="room">
+            Lifestyle
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     НОВОСТИ
+========================= -->
+
+<section id="news">
+
+<div class="section-label">
+    06 / Новости
+</div>
+
+<h2 class="section-title">
+    Новости Искры.
+</h2>
+
+
+<div class="news">
+
+    <div class="news-card">
+
+        <div class="news-type">
+            Открытие
+        </div>
+
+        <h3>
+            Новый магазин
+        </h3>
+
+        <p>
+            В торговом центре
+            появился новый
+            Minecraft-магазин.
+        </p>
+
+    </div>
+
+
+    <div class="news-card">
+
+        <div class="news-type">
+            Событие
+        </div>
+
+        <h3>
+            Ночь в Искре
+        </h3>
+
+        <p>
+            Большое игровое
+            мероприятие
+            для жителей города.
+        </p>
+
+    </div>
+
+
+    <div class="news-card">
+
+        <div class="news-type">
+            Акция
+        </div>
+
+        <h3>
+            Красная неделя
+        </h3>
+
+        <p>
+            Специальные предложения
+            магазинов ТЦ.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     КОНТАКТЫ
+========================= -->
+
+<section id="contacts">
+
+<div class="section-label">
+    07 / Контакты
+</div>
+
+<h2 class="section-title">
+    Искра в Minecraft.
+</h2>
+
+
+<div class="contacts">
+
+    <div class="contact">
+
+        <h3>
+            Адрес
+        </h3>
+
+        <p>
+            Пермь, Minecraft-город.
+            Точное расположение
+            будет добавлено
+            на карту города.
+        </p>
+
+    </div>
+
+
+    <div class="contact">
+
+        <h3>
+            Время работы
+        </h3>
+
+        <p>
+            ТЦ доступен игрокам
+            круглосуточно.
+        </p>
+
+    </div>
+
+
+    <div class="contact">
+
+        <h3>
+            Парковка
+        </h3>
+
+        <p>
+            Парковка расположена
+            рядом со зданием
+            торгового центра.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div>
+        <strong>ИСКРА</strong>
+        · Пермь в Minecraft
+    </div>
+
+    <div>
+        Minecraft City Project · 2026
+    </div>
+
+</footer>
+
+</body>
+</html>

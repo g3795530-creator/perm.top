@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Пермь — Minecraft City</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: #f7fbfd;
+    color: #101820;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 70px;
+
+    z-index: 1000;
+
+    background: rgba(255,255,255,.88);
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid #e0edf3;
+}
+
+nav {
+    max-width: 1200px;
+    height: 100%;
+
+    margin: auto;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #35aeea;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+nav li {
+    color: #70818c;
+    font-size: 12px;
+}
+
+nav li:hover {
+    color: #1997d7;
+}
+
+.server-button {
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    background: #39b4ed;
+    color: white;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 720px;
+
+    padding: 140px 25px 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #dff5ff,
+            #ffffff 65%
+        );
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    border-radius: 50%;
+
+    background: rgba(55,181,238,.12);
+
+    filter: blur(90px);
+
+    top: -150px;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1000px;
+}
+
+.location {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    margin-bottom: 25px;
+
+    border: 1px solid #d9ebf3;
+    border-radius: 50px;
+
+    background: rgba(255,255,255,.8);
+
+    color: #70818c;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.location::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #35b4ed;
+
+    box-shadow: 0 0 12px rgba(53,180,237,.8);
+}
+
+.hero h1 {
+    font-size: clamp(75px, 16vw, 190px);
+
+    line-height: .8;
+
+    letter-spacing: -12px;
+
+    font-weight: 900;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #e6f8ff 45%,
+            #3aaee5
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    filter:
+        drop-shadow(
+            0 20px 35px
+            rgba(40,150,210,.18)
+        );
+}
+
+.hero h2 {
+    margin-top: 25px;
+
+    font-size: 21px;
+
+    font-weight: 600;
+
+    color: #526d7a;
+}
+
+.hero p {
+    max-width: 620px;
+
+    margin: 20px auto 0;
+
+    color: #7a8d98;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+.button {
+    padding: 13px 19px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    transition: .2s;
+}
+
+.primary {
+    background: #35afe8;
+    color: white;
+
+    box-shadow:
+        0 10px 30px
+        rgba(53,175,232,.2);
+}
+
+.primary:hover {
+    background: #168fcb;
+    transform: translateY(-2px);
+}
+
+.secondary {
+    background: white;
+
+    border: 1px solid #dcecf3;
+}
+
+.secondary:hover {
+    background: #effaff;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 100px 25px;
+}
+
+.label {
+    color: #1595d3;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+
+    margin-bottom: 8px;
+}
+
+.title {
+    font-size: 40px;
+
+    letter-spacing: -1.8px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   MALL CARDS
+========================= */
+
+.malls {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.mall {
+    min-height: 310px;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    transition: .25s;
+
+    cursor: pointer;
+}
+
+.mall:hover {
+    transform: translateY(-7px);
+}
+
+
+/* IMALL */
+
+.mall-imall {
+    background:
+        linear-gradient(
+            145deg,
+            #e7f8ff,
+            #52bce9
+        );
+
+    color: #10212a;
+
+    box-shadow:
+        0 20px 50px
+        rgba(55,180,230,.13);
+}
+
+
+/* PLANETA */
+
+.mall-planeta {
+    background:
+        linear-gradient(
+            145deg,
+            #e8f9ff,
+            #45b4e9
+        );
+
+    color: #10212a;
+
+    box-shadow:
+        0 20px 50px
+        rgba(55,180,230,.13);
+}
+
+
+/* ISKRA */
+
+.mall-iskra {
+    background:
+        linear-gradient(
+            145deg,
+            #211010,
+            #080808
+        );
+
+    color: white;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.2);
+}
+
+.mall::before {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.18);
+
+    right: -80px;
+    top: -80px;
+}
+
+.mall-iskra::before {
+    background:
+        rgba(255,35,55,.14);
+}
+
+.mall-content {
+    position: relative;
+    z-index: 2;
+}
+
+.mall-label {
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+
+    opacity: .65;
+}
+
+.mall h3 {
+    font-size: 32px;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 8px;
+}
+
+.mall p {
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    opacity: .7;
+
+    max-width: 290px;
+}
+
+.mall-button {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 10px 15px;
+
+    border-radius: 7px;
+
+    background: rgba(255,255,255,.75);
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+.mall-iskra .mall-button {
+    background: #ff2638;
+    color: white;
+}
+
+
+/* =========================
+   INFO
+========================= */
+
+.info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+.info-card {
+    padding: 28px;
+
+    background: white;
+
+    border: 1px solid #deedf3;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 12px 40px
+        rgba(30,150,190,.06);
+}
+
+.info-number {
+    color: #39afe6;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    margin-bottom: 30px;
+}
+
+.info-card h3 {
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+.info-card p {
+    color: #7b8d97;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   SERVER
+========================= */
+
+.server {
+    padding: 45px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #e2f7ff,
+            #ffffff
+        );
+
+    border: 1px solid #d9edf5;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.server h2 {
+    font-size: 30px;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 8px;
+}
+
+.server p {
+    color: #778b96;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+.online {
+    flex-shrink: 0;
+
+    padding: 13px 18px;
+
+    border-radius: 8px;
+
+    background: #35b4ed;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 40px 25px;
+
+    border-top: 1px solid #dfedf2;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #8a9aa3;
+
+    font-size: 11px;
+}
+
+footer strong {
+    color: #152027;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    nav ul {
+        display: none;
+    }
+
+    .malls,
+    .info {
+        grid-template-columns: 1fr;
+    }
+
+    .server {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero h1 {
+        font-size: 80px;
+        letter-spacing: -7px;
+    }
+
+    section {
+        padding: 70px 20px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .mall {
+        min-height: 270px;
+    }
+
+    .server {
+        padding: 30px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<nav>
+
+    <a href="index.html" class="logo">
+        <span>П</span>ЕРМЬ
+    </a>
+
+    <ul>
+        <li><a href="#malls">Торговые центры</a></li>
+        <li><a href="#about">О городе</a></li>
+        <li><a href="#server">Сервер</a></li>
+    </ul>
+
+    <a href="#malls" class="server-button">
+        ТРЦ
+    </a>
+
+</nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<div class="hero">
+
+<div class="hero-content">
+
+    <div class="location">
+        Пермь · Minecraft City
+    </div>
+
+    <h1>
+        ПЕРМЬ
+    </h1>
+
+    <h2>
+        Пермь в Minecraft
+    </h2>
+
+    <p>
+        Виртуальная версия города,
+        которую мы строим в Minecraft.
+        Улицы, здания, торговые центры
+        и городская инфраструктура.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="#malls" class="button primary">
+            Исследовать город
+        </a>
+
+        <a href="#about" class="button secondary">
+            О проекте
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<main>
+
+
+<!-- =========================
+     ТОРГОВЫЕ ЦЕНТРЫ
+========================= -->
+
+<section id="malls">
+
+<div class="label">
+    01 / Торговые центры
+</div>
+
+<h2 class="title">
+    Главные места города.
+</h2>
+
+
+<div class="malls">
+
+
+    <!-- iMALL -->
+
+    <a href="imall.html" class="mall mall-imall">
+
+        <div class="mall-content">
+
+            <div class="mall-label">
+                Shopping center
+            </div>
+
+            <h3>
+                iMALL
+            </h3>
+
+            <p>
+                Современный торговый центр
+                в бело-голубом стиле.
+                Магазины, услуги и развлечения.
+            </p>
+
+            <span class="mall-button">
+                Открыть iMALL →
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <!-- PLANETA -->
+
+    <a href="планета.html" class="mall mall-planeta">
+
+        <div class="mall-content">
+
+            <div class="mall-label">
+                Shopping & Entertainment
+            </div>
+
+            <h3>
+                Планета
+            </h3>
+
+            <p>
+                Большой торгово-развлекательный
+                центр Minecraft-Перми.
+            </p>
+
+            <span class="mall-button">
+                Открыть Планету →
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <!-- ISKRA -->
+
+    <a href="искра.html" class="mall mall-iskra">
+
+        <div class="mall-content">
+
+            <div class="mall-label">
+                Shopping center
+            </div>
+
+            <h3>
+                ИСКРА
+            </h3>
+
+            <p>
+                Чёрно-красный торговый центр
+                с магазинами, едой и
+                развлечениями.
+            </p>
+
+            <span class="mall-button">
+                Открыть Искру →
+            </span>
+
+        </div>
+
+    </a>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     О ГОРОДЕ
+========================= -->
+
+<section id="about">
+
+<div class="label">
+    02 / Город
+</div>
+
+<h2 class="title">
+    Пермь, которую мы строим.
+</h2>
+
+
+<div class="info">
+
+
+    <div class="info-card">
+
+        <div class="info-number">
+            01
+        </div>
+
+        <h3>
+            Город
+        </h3>
+
+        <p>
+            Мы постепенно создаём
+            виртуальную Пермь:
+            дороги, здания, районы
+            и достопримечательности.
+        </p>
+
+    </div>
+
+
+    <div class="info-card">
+
+        <div class="info-number">
+            02
+        </div>
+
+        <h3>
+            Реальные места
+        </h3>
+
+        <p>
+            В проекте появляются
+            знакомые жителям города
+            здания и торговые центры.
+        </p>
+
+    </div>
+
+
+    <div class="info-card">
+
+        <div class="info-number">
+            03
+        </div>
+
+        <h3>
+            Minecraft
+        </h3>
+
+        <p>
+            Всё это строится
+            из блоков Minecraft
+            и постепенно превращается
+            в полноценный город.
+        </p>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SERVER
+========================= -->
+
+<section id="server">
+
+<div class="server">
+
+    <div>
+
+        <h2>
+            Minecraft City
+        </h2>
+
+        <p>
+            Добро пожаловать в проект
+            «Пермь в Minecraft».
+            Город продолжает развиваться.
+        </p>
+
+    </div>
+
+    <div class="online">
+        ● Проект развивается
+    </div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div>
+        <strong>ПЕРМЬ</strong>
+        · Minecraft City
+    </div>
+
+    <div>
+        iMALL · Планета · Искра
+    </div>
+
+</footer>
+
+</body>
+</html>
